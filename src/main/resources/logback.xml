@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<configuration scan="true" scanPeriod="60 seconds" debug="false">
+
+    <appender name="fileAppender" class="ch.qos.logback.core.FileAppender">
+        <file>/var/log/elk/app.log</file>
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{5} - %msg%n</pattern>
+        </encoder>
+        <append>true</append>
+        <prudent>false</prudent>
+    </appender>
+
+    <root level="ALL">
+        <appender-ref ref="fileAppender" />
+    </root>
+</configuration>
